@@ -13,9 +13,12 @@ class SessionController {
                 .required(),
             password: Yup.string().required(),
         });
+        // If schema is invalid
         if (!(await schema.isValid(req.body))) {
+            // return Error
             return res.status(400).json({ error: 'Validation Fails' });
         }
+        // desestruturation of objects
         const { email, password } = req.body;
 
         const user = await User.findOne({ where: { email } });

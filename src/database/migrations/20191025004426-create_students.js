@@ -24,11 +24,11 @@ module.exports = {
             },
 
             peso: {
-                type: Sequelize.DECIMAL,
+                type: Sequelize.DOUBLE,
                 allowNull: false,
             },
             altura: {
-                type: Sequelize.DECIMAL,
+                type: Sequelize.DOUBLE,
                 allowNull: false,
             },
             created_at: {
@@ -42,7 +42,7 @@ module.exports = {
         });
     },
 
-    down: (queryInterface, Sequelize) => {
+    down: queryInterface => {
         return queryInterface.dropTable('students');
     },
 };

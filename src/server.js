@@ -1,5 +1,5 @@
 import app from './app';
 
-const port = 8010;
+const port = 3331;
 
 app.listen(port);
