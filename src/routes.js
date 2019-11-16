@@ -21,5 +21,20 @@ routes.use(authMiddleware);
 
 routes.post('/students', StudentController.store);
 routes.put('/students', StudentController.update);
+/**
+ * Gestão de Planos
+ */
+
+// List
+routes.get('/plans');
+// Create
+routes.post('/plans');
+// update
+routes.put('/plans');
+
+// Checkins de Estudantes
+
+routes.post('/students/:id/checkins');
+routes.get('/students/:id/checkins');
 
 export default routes;
