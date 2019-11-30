@@ -1,4 +1,4 @@
-import { Model } from 'sequelize';
+import Sequelize, { Model } from 'sequelize';
 
 class Plan extends Model {
     static init(sequelize) {
@@ -6,10 +6,12 @@ class Plan extends Model {
             {
                 title: Sequelize.STRING,
                 duration: Sequelize.INTEGER,
-                price: Sequelize.REAL,
+                price: Sequelize.FLOAT,
+                canceled_at: Sequelize.DATE,
             },
             { sequelize }
         );
+        return this;
     }
 }
 
