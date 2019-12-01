@@ -5,10 +5,10 @@ module.exports = {
     // este arquivo é acessado tanto pelo sequelize quanto pela aplicação
     // tipo de base de dados
     dialect: 'postgres',
-    host: 'localhost',
-    username: 'postgres',
-    password: 'docker',
-    database: 'gympoint',
+    host: process.env.DB_HOST,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
     define: {
         // Garante que terei uma coluna created at updated
         timestamps: true,

@@ -14,6 +14,14 @@ class Student extends Model {
             },
             { sequelize }
         );
+        this.addHook('beforeSave', student => {
+            if (student.altura) {
+                student.altura *= 100;
+            }
+            if (student.peso) {
+                student.peso *= 1000;
+            }
+        });
         return this;
     }
 }
